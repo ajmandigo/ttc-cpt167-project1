@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>School Store Interface</title>
+		<meta name="author" content="Alex" />
+		<!-- Date: 2015-03-15 -->
+	</head>
+	<body>
+	<script type="text/javascript">
+	///FILE : SchoolStoreInterface.html
+	///PROG : Alex Mandigo
+	///PURP : Calculate sales costs for in-store purchases
+
+	var firstName = "";
+	var numYearsAttended = 0;
+	var itemName = "";
+	var itemPrice = 0.0;
+	var itemAmount = 0;
+	var discountRate = 0.37;
+	var discountAmount = 0.0;
+	var discountPrice = 0.0;
+	var totalPrice = 0.0;
+	
+	///Input
+	firstName = prompt("Hey there! Welcome to the School Store. What's your name?","");
+	numYearsAttended = prompt("Hey " + firstName + "! Great to have you with us today. How many years have you been attending school here?","0");
+	itemName = prompt("Very nice. Is there something you'd like to purchace?","");
+	itemPrice = prompt("Excellent. Now, what is the listed price for this item?","0.00");
+	itemAmount = prompt("And how many would you like to get?","0");
+	
+	///Conversions
+	itemPrice = parseFloat(itemPrice);
+	itemAmount = parseInt(itemAmount);
+	
+	///Calculations
+	discountAmount = itemPrice * discountRate;
+	discountPrice = itemPrice - discountAmount;
+	totalPrice = discountPrice * itemAmount;
+	
+	///Output
+	document.write("Welcome to the School Store!<br>Good news, everything in the store is 37% off!<br>");
+	document.write("OK, " + firstName + ", so the price per item  you indicated is $" + itemPrice + ". <br>");
+	document.write("After applying discounts, the price per item indicated is $" + discountPrice + ". <br>");
+	document.write("And at " + itemAmount + " " + itemName + "(s), your total should come out to be $" + totalPrice + ". <br>");
+	document.write("Thank you for shopping with us, " + firstName + ", and have a wonderful day!");
+	
+	///END PROGRAM
+	</script>
+	</body>
+</html>
+
